@@ -1,0 +1,25 @@
+/*
+ * Style Sheet for site-wide use on the BrownBros.net website.
+ * Copyright ©2018 Ronald Lamoreaux, as Chindraba
+ *
+ * This work is not licensed for use or distribution.
+ */
+
+/*  The styles for the page footer. Common to all pages  */
+footer {
+  padding-top: 1.5em;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.25em;
+}
+footer a[href^="http"]:after {
+  content: "\1f310";
+}
+.card_logo {
+  width: 3.4785em;
+}
+#copyright {
+  font-size: 0.75em;
+}
+/*
+

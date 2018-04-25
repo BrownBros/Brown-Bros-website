@@ -1,0 +1,44 @@
+/*
+ * Style Sheet for site-wide use on the BrownBros.net website.
+ * Copyright ©2018 Ronald Lamoreaux, as Chindraba
+ *
+ * This work is not licensed for use or distribution.
+ */
+
+/*  The styles for the page header. Common to all pages  */
+header {
+  padding-top: 2.25em;
+  padding-bottom: 1.5em;
+  text-align: center;
+  font-size: 1.25em;
+}
+
+#logo {
+  width: 17em;
+}
+@media (max-width: 40em) {
+  #logo {
+    width: 53.125%;
+  }
+}
+address {
+  font-style: normal;
+  font-size: .8em;
+}
+#license {
+  font-size: .8em;
+}
+#license span {
+  font-family: "Roboto Mono",monospace;
+  font-size: 1em;
+}
+.slogan {
+  font-style: italic;
+  padding: 0.4em 0;
+}
+#company_name {
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+https://fonts.googleapis.com/css?family=Roboto_Mono'

@@ -1,0 +1,87 @@
+/*
+ * Style Sheet for site-wide use on the BrownBros.net website.
+ * Copyright ©2018 Ronald Lamoreaux, as Chindraba
+ *
+ * This work is not licensed for use or distribution.
+ */
+
+/*  Load the font-specific CSS files  */
+@import "/css/font-css/assistant.css";
+@import "/css/font-css/roboto.css";
+@import "/css/font-css/roboto-mono.css";
+@import "/css/font-css/symbola.css";
+
+/*  Load the style sheets for the header and footer  */
+@import "/css/header-style.css";
+@import "/css/footer-style.css";
+
+/*  Load the style sheet for the navigation system  */
+@import "/css/navigation-menu.css";
+
+/*  Set up global styles  */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'FreeSerif','Assistant','Arial Unicode MS','Quivira','Symbola','Segoe UI Symbol','Code2000',sans-serif;
+}
+a, a:after, a:before {
+  color: blue;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin: 0 0.25em 0 0.25em;
+  font-weight: 400;
+}
+a:hover, a:hover:after, a:hover:before {
+  color: Firebrick;
+}
+a[href^="tel:"]:after {
+  content: "\260e";
+}
+a[href^="mailto:"]:after {
+  content: "\1f4e7";
+}
+
+/* Styles to control the page layout
+ * The site will never become a _busy_ content site, so all content
+ * will stay in one basic column. Text in long lines becomes unreadable
+ * and that is bad. Keep the page to a maximum width while allowing it
+ * to be adaptive for smaller screens.
+ * Using two page-controlling DIVs to limit the width and center the
+ * whole in the window if the browser is wider than the maximum set.
+ */
+#page_box {
+  /* Set the full-page background */
+  background: rgba(68,273,68,.15);
+  background: linear-gradient(rgba(68,273,68,.1) 0%,rgba(68,273,68,.55) 50%,rgba(68,273,68,.1) 100%);
+  /* Center align the page block below */
+  text-align: center;
+}
+#page_wrapper {
+  /* Treat this box as an inline element to the above div then treat it
+   * as a block level element to contain everything else
+   */
+  display: inline-block;
+  /* Return alignment to the default left */
+  text-align: left;
+  width: 99%;
+  border: 1px solid blue;
+}
+@media (min-width: 50em) {
+  #page_wrapper {
+    max-width: 50em;
+  }
+}
+/* The block to hold the main content for the page. Restore the default
+ * alignment and set the proper margin for the content of the page.
+ */
+
+#content_wrapper {
+  text-align: left;
+  margin: 0.5em;
+}
+@media (min-width: 50em) {
+  #content_wrapper {
+    margin: 0;
+  }
+}

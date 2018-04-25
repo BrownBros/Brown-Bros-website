@@ -1,0 +1,77 @@
+/*
+ * Style Sheet for the BrownBros.net website.
+ * Copyright ©2018 Ronald Lamoreaux, as Chindraba
+ *
+ * This work is not licensed for use or distribution.
+ */
+
+/* Styles for the About Us page */
+#about_img {
+    text-align: center;
+}
+#about_img img {
+    width: 37.5em;
+}
+@media (max-width: 41em) {
+  #about_img img {
+    width: 91.75%
+  }
+}
+
+/* Styles for the Contact Us page, and its result pages */
+#contact_brownbros {
+  width: 100%;
+}
+#contact_brownbros * {
+  width: 100%;
+  margin-right: 0.375em;
+}
+#contact_from {
+    display: none;
+    visibility: hidden;
+}
+.contact_error {
+  color: Red;
+  background: Linen;
+  border-radius: 3px;
+}
+input[type^="submit"]:hover {
+  background: linear-gradient(to right,rgba(235,148,148,.55) 0%,rgba(235,148,148,.99) 50%,rgba(235,148,148,.55) 100%)
+}
+
+/* Styles for the displaying the content of flyers/specials that have
+ * been mailed/distributed locally
+ */
+.flyer {
+  text-align: center;
+  font-size: 1.2em;
+}
+.flyer .pricing {
+  margin: 0.5em;
+  padding: 0.5em;
+  display: inline-block;
+  border: solid black .125em;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+/* Styles for long pages with links to the top included. FAQ and other
+ * informational pages are in this category
+ */
+.informational {
+  margin: 1em .45em 0 .45em;
+}
+.informational a  {
+  margin: 0;
+}
+.informational h2 {
+  width: 100%;
+}
+.informational h2 a:last-child {
+  float: right;
+}
+.informational h2 a:last-child:after {
+  margin: 0;
+  content: "\261d";
+  font-size: 1.25em;
+}
