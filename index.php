@@ -5,6 +5,7 @@
  * This work is not licensed for use or distribution.
 -->
 <?php
+include('cgi-bin/configure.php');
 include('cgi-bin/contact_handler.php');
 $page_name= filter_input(INPUT_SERVER, 'QUERY_STRING', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_BACKTICK);
 ?>
