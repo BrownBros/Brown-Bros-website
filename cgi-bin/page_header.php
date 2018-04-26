@@ -1,9 +1,11 @@
 <header>
-  <img id="logo" src="assets/main_logo.png">
-  <address>889 S. Derby Cir., Golden Valley, AZ 86416</address>
-  <div id="license">AZ R.O.C. <span># 306454</span></div>
-  <div class="slogan">"Serving All of Golden Valley"</div>
+  <img id="logo" src="assets/<?php echo $logo_file; ?>">
+  <address><?php
+  echo $company_address_street . ', ' . $company_address_city . ', ' . $compay_address_state . ' ' . $company_address_zipcode;
+  ?></address>
+  <div id="license">AZ R.O.C. <span># <?php echo $contractor_license; ?></span></div>
+  <div class="slogan"><?php echo $company_tagline; ?></div>
   <div id="company_name">Air Conditioning &amp; Heating Sales &amp; Service</div>
-  <div><a href="tel:928-249-4406">(928) 249-4406</a></div>
-  <div class="slogan">We not only work in Golden Valley, we also live in Golden Valley</em></div>
+  <div><a href="tel:<?php echo $company_phone_url; ?>"><?php echo $company_phone_display;?></a></div>
+  <div class="slogan"><?php echo $company_slogan; ?></div>
 </header>

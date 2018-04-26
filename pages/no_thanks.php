@@ -4,5 +4,5 @@
   <div>We appreciate your time and we will contact you as soon as we reasonably can.</div>
   <br>
   <div>The message sent was:</div>
-  <textarea name="sender_memo" id="sender_memo" rows="15" disabled="disabled">Message Content</textarea><br>
+  <textarea name="sender_memo" id="sender_memo" rows="15" disabled="disabled"><?php echo $sender_memo;?></textarea><br>
 </form>
