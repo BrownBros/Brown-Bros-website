@@ -20,11 +20,7 @@
     include('cgi-bin/page_nav.php');
     include('cgi-bin/page_header.php');
 ?>
-<div id="content_wrapper">
-
-  <h1>Common Questions</h1>
-
-</div>
+<div id="content_wrapper"><?php include('pages/faq.php'); ?></div>
 <?php include('cgi-bin/page_footer.php'); ?>
 </div>
 <div id="copyright">Site content Copyright &copy;2018 by Brown Bros. Heat &amp; Air.</div></div>
