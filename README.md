@@ -18,7 +18,7 @@ The site will grow a minimal amount, although the content will increase, and be 
 
 - Develop a 'Home" page rather than using the current flyer
 - ~~Convert to PHP operations~~
-- Customize `<META>` tags for each file
+- Customize `<META>` tags for each file (__Configured, data still is TBD.__)
 - Create a method for site owner to add content to informational pages
 - Dynamically generate informational pages from owner-created content
 - Implement the planned message sending from the Contact Us page.
