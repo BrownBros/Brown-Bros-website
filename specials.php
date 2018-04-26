@@ -33,15 +33,7 @@
   </div>
   <div class="crumb">Brown Bros. Heat &amp; Air</div>
 </nav>
-<header>
-  <img id="logo" src="assets/main_logo.png">
-  <address>889 S. Derby Cir., Golden Valley, AZ 86416</address>
-  <div id="license">AZ R.O.C. <span># 306454</span></div>
-  <div class="slogan">"Serving All of Golden Valley"</div>
-  <div id="company_name">Air Conditioning &amp; Heating Sales &amp; Service</div>
-  <div><a href="tel:928-249-4406">(928) 249-4406</a></div>
-  <div class="slogan">We not only work in Golden Valley, we also live in Golden Valley</em></div>
-</header>
+<?php include('cgi-bin/page_header.php'); ?>
 <div id="content_wrapper">
 
 <div class="flyer">
@@ -61,22 +53,7 @@
 </div>
 
 </div>
-<footer>
-  <div>Any time you need us! Week-ends, holidays, we're here for you!</div>
-  <div>Visit: <a href="http://www.BrownBros.net">www.BrownBros.net</a></div>
-  <div>Contact: <a href="mailto:mike&#64;BrownBros&#46;net">mike&#64;BrownBros&#46;net</a></div>
-  <div>All major credit cards accepted</div>
-  <div>
-    <img class="card_logo" src="cards/visa.png" />
-    <img class="card_logo" src="cards/master.png" />
-    <img class="card_logo" src="cards/amex.png" />
-    <img class="card_logo" src="cards/discover.png" />
-<!-- Diners Club card acceptance is not yet confirmed
-    <img class="card_logo" src="cards/diners.png" />
--->
-  </div>
-</footer>
-
+<?php include('cgi-bin/page_footer.php'); ?>
 </div>
 <div id="copyright">Site content Copyright &copy;2018 by Brown Bros. Heat &amp; Air.</div></div>
 </body>
