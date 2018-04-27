@@ -5,7 +5,8 @@ RewriteCond %{DOCUMENT_ROOT}/pages/$1.php -f [OR]
 RewriteCond %{DOCUMENT_ROOT}/pages/$1.html -f [OR]
 RewriteCond %{DOCUMENT_ROOT}/pages/$1/index.php -f [OR]
 RewriteCond %{DOCUMENT_ROOT}/pages/$1/index.html -f
-RewriteRule "^([^/.]+)$" "?$1" [NC,L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule . /home [R,L]
+RewriteRule "^/?([^/]+)$" "?$1" [NC,L]
+RewriteCond %{DOCUMENT_ROOT}/$1 !-f
+RewriteCond %{DOCUMENT_ROOT}/$1 !-d
+RewriteRule "^(.+)$" /home [R,L]
 </IfModule>
