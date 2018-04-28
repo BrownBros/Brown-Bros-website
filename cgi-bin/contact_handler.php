@@ -8,7 +8,7 @@
     $error_email =
     $error_phone =
     $error_memo =
-    $success_message = "";
+    $error_message = "";
     $clear_to_send = 1;
     if(isset($_POST['sender_sent'])) {
       if (empty($_POST["sender_name"])) {
@@ -16,7 +16,7 @@
         $clear_to_send = 0;
       } else {
         $sender_name = filter_input( INPUT_POST, "sender_name", FILTER_SANITIZE_STRING);
-        if (!preg_match("/^[\.,a-zA-Z ]*$/",$name)) {
+        if (!preg_match("/^[\.,a-zA-Z ]*$/",$sender_name)) {
           $error_name = "Only letters and spaces are allowed";
           $clear_to_send = 0;
         }
@@ -32,7 +32,7 @@
         } elseif ( preg_match('/^1?(\d{3})(\d{4})$/', $cleaned, $matches) )  {
           $sender_phone = "{$matches[1]}-{$matches[2]}";
         } else {
-          $error_phone = "The phone number does not appear to be right.<br>If you have a business extension, please add that to the message.";
+          $error_phone = "The phone number does not look right.<br>If you have a business extension, please add that to the message rather than include it in the phone number.";
           $sender_phone = $_POST["sender_phone"];
           $clear_to_send = 0;
         }
@@ -68,7 +68,7 @@
           $now = time();
           $time_short = gmdate('c', $now);
           $time_long = date('r', $now);
-          $confirm_email = $sender_name . "<" . $sender_email . ">";
+          $confirm_email = "$sender_name <$sender_email>";
           $confirm_subject = "Contact message you left at www.BrownBros.net";
           $confirm_body = "Hello, $sender_name:
 Thank you for contacting Brown Bros.
@@ -80,13 +80,14 @@ Name: $sender_name <$sender_email>
 Phone: $sender_phone
 
 This is a Contact Confirmation email.
+Your message has been sent to our mailbox.
 We will contact you as soon as possible.
 
 $time_long";
-          $notice_email = "Mike Brown <mike@BrownBros.net>";
-          $notice_subject = "Web contact from " . $sender_name . "<". $sender_email .">";
+          $notice_email = $contact_email;
+          $notice_subject = "Web contact from $sender_name <$sender_email>";
           $notice_body = "$time_long
-A user $name used the 'Contacted Us' page and sent this information:
+A user $sender_name used the 'Contacted Us' page and sent this information:
 Message:
 -----
 $sender_memo
@@ -102,10 +103,10 @@ $time_short";
             file_put_contents("contacts/sent.log", $log_line.PHP_EOL , FILE_APPEND | LOCK_EX);
             $page_name = 'thanks';
           } else {
-            $success_message = "We're sorry! There was a problem sending your message.";
+            $error_message = "We're sorry! There was a problem sending your message.";
           }
         } else {
-          $success_message = "Something was not correct. Please review your information and try again.";
+          $error_message = "Something was not correct. Please review your information and try again.";
         }
       }
     }
