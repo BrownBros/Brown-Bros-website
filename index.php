@@ -6,7 +6,6 @@
 -->
 <?php
 include('cgi-bin/configure.php');
-include('cgi-bin/contact_handler.php');
 $page_name= filter_input(INPUT_SERVER, 'QUERY_STRING', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_BACKTICK);
 $page_data = array();
 $page_links = array();
@@ -15,6 +14,7 @@ $page_names = array_map(function($data){$info = explode('µ',$data); return $inf
 if ('' == $page_name || ! in_array($page_name, $page_names) ) {
   $page_name = 'home';
 }
+include('cgi-bin/contact_handler.php');
 foreach ($pages_info as $page_info) {
   $page_data = explode('µ', $page_info);
   $page_names[$page_data[0]] = $page_data[1];

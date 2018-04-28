@@ -20,7 +20,7 @@ $company_phone_url = "928-249-4406";
 $contact_name = "Mike Brown";
 
 // The email address used for sending "Contact Us" page data
-$contact_email = "mike@$domain_name";
+$contact_email = "webmaster@$domain_name";
 // The email address where users can contact the site in non-scrapeable format
 $contact_email_safe = "mike&#64;$domain_name_safe";
 
