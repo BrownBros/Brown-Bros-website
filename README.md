@@ -21,7 +21,7 @@ The site will grow a minimal amount, although the content will increase, and be 
 - Customize `<META>` tags for each file (__Configured, data still is TBD.__)
 - Create a method for site owner to add content to informational pages
 - Dynamically generate informational pages from owner-created content
-- Implement the planned message sending from the Contact Us page.
+- ~~Implement the planned message sending from the Contact Us page.~~
 - An archive of past flyers (?possibly)
 - Add a testimonials page (?possibly)
 - Add a guestbook (?possibly)
@@ -34,7 +34,8 @@ At this time this repository is not licensed for use or distribution by anyone, 
 
 Future plans are to select an OpenSource license to release this under. That, however, is not yet set in any timeframes.
 
-Effective site content copyright 2018, Michael Brown, Brown Bros Air Conditioning and Heating Sales and Service.
+Effective site content (text and images) copyright 2018, Michael Brown, Brown Bros Air Conditioning and Heating Sales and Service.
 
 Unless noted elsewhere, all other content - HTML, CSS, PHP, etc. - is copyright 2018, Ronald Lamoreaux, DBA Chindraba
 
+Font files are copyright by their respective owners, as noted in the `CSS` files that load them. The licenses for which are available where noted, or in the `licenses` directory of this repository.
