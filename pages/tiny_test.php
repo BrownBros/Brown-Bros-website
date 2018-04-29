@@ -9,10 +9,13 @@
     $edited_data = "The editor hasn't been used <b>yet</b>.";
   }
 ?>
-  <script src="/path/to/tinymce/tinymce.min.js"></script>
+  <script src="/js/tinymce/tinymce.min.js"></script>
   <script type="text/javascript">
   tinymce.init({
-    selector: '#mytextarea'
+    selector: '#mce_data_area',
+    plugins: 'code',
+    toolbars: 'code',
+    skin: 'bbhvac-light'
   });
   </script>
   <h1>Test drive of Tiny MCE Editor</h1>
