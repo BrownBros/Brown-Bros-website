@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <!--
  * Copyright ©<?php echo date('Y');?> Ronald Lamoreaux, DBA Chindraba
