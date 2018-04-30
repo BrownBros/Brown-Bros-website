@@ -4,7 +4,9 @@
 
 Current status is a collection of static HTML files, with `php` extensions.
 
-If the `.htaccess` file is disabled, the links will work, otherwise they will not. This is a temporary condition while the static HTML is being converted to dynamic PHP.
+~~If the `.htaccess` file is disabled, the links will work, otherwise they will not. This is a temporary condition while the static HTML is being converted to dynamic PHP.~~
+
+The links in the generated HTML now work and the `.htaccess` file is enabled with the `mod_rewrite` configured to allow page names to be used as www.BrownBros.net/`page_name`.
 
 Intentions are to use PHP to serve the pages with common content merged with the page specific content. Some pages will become more _dynamic_ in nature, and the navication menu will be modified for each page as needed.
 
@@ -15,11 +17,11 @@ The site will grow a minimal amount, although the content will increase, and be 
 ## TODO
 
 - Develop a 'Home" page rather than using the current flyer
-- Convert to PHP operations
-- Customize `<META>` tags for each file
+- ~~Convert to PHP operations~~
+- Customize `<META>` tags for each file (__Configured, data still is TBD.__)
 - Create a method for site owner to add content to informational pages
 - Dynamically generate informational pages from owner-created content
-- Implement the planned message sending from the Contat Us page.
+- ~~Implement the planned message sending from the Contact Us page.~~
 - An archive of past flyers (?possibly)
 - Add a testimonials page (?possibly)
 - Add a guestbook (?possibly)
@@ -32,7 +34,8 @@ At this time this repository is not licensed for use or distribution by anyone, 
 
 Future plans are to select an OpenSource license to release this under. That, however, is not yet set in any timeframes.
 
-Effective site content copyright 2018, Michael Brown, Brown Bros Air Conditioning and Heating Sales and Service.
+Effective site content (text and images) copyright 2018, Michael Brown, Brown Bros Air Conditioning and Heating Sales and Service.
 
 Unless noted elsewhere, all other content - HTML, CSS, PHP, etc. - is copyright 2018, Ronald Lamoreaux, DBA Chindraba
 
+Font files are copyright by their respective owners, as noted in the `CSS` files that load them. The licenses for which are available where noted, or in the `licenses` directory of this repository.
