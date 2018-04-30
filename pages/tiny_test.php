@@ -16,8 +16,8 @@
     fontsize_formats: '8pt 10pt 12pt 14pt 18pt 24pt 36pt 48pt 60pt',
     plugins: 'image imagetools lists advlist codesample searchreplace preview textcolor colorpicker code media link paste table anchor autosave charmap contextmenu fullscreen help print spellchecker',
 //    toolbars: 'code media codesample paste table anchor restoredraft charmap fullscreen help',
-toolbar: "fontselect | fontsizeselect | styleselect | forecolor backcolor | insertfile undo redo paste searchreplace | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link anchor image media | restoredraft charmap spellchecker | code codesample | print fullscreen help",
-
+toolbar: "searchreplace | fontselect fontsizeselect styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent bullist numlist | undo redo paste insertfile | forecolor backcolor | anchor link image media code codesample charmap | spellcheck | restoredraft print | fullscreen | help",
+    spellchecker_rpc_url: 'spellchecker.php',
     menubar: 'file edit insert format view tools table help',
     default_link_target: "_blank",
     imagetools_proxy: '/cgi-bin/image_proxy.php',
