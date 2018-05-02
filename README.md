@@ -25,6 +25,7 @@ The site will grow a minimal amount, although the content will increase, and be 
 - An archive of past flyers (?possibly)
 - Add a testimonials page (?possibly)
 - Add a guestbook (?possibly)
+- Add traffic statistics (visit counter?)
 
 ---
 
