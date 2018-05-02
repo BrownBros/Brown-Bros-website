@@ -69,7 +69,7 @@
           $time_short = gmdate('c', $now);
           $time_long = date('r', $now);
           $confirm_email = "$sender_name <$sender_email>";
-          $confirm_subject = "Contact message you left at www.BrownBros.net";
+          $confirm_subject = "Contact message you left at " . Config::get('domain_url');
           $confirm_body = "Hello, $sender_name:
 Thank you for contacting Brown Bros.
 Your message was:
@@ -84,7 +84,7 @@ Your message has been sent to our mailbox.
 We will contact you as soon as possible.
 
 $time_long";
-          $notice_email = $contact_email;
+          $notice_email = Config::get('contact_email');
           $notice_subject = "Web contact from $sender_name <$sender_email>";
           $notice_body = "$time_long
 A user $sender_name used the 'Contacted Us' page and sent this information:
@@ -97,7 +97,7 @@ Phone: $sender_phone
 
 A confirmational email was sent to them at the address they supplied.
 $time_short";
-          $headers = "From: noreply@BrownBros.net\nReply-To: noreply@BrownBros.net\n";
+          $headers = "From: noreply@" . Config::get('domain_name') . "\nReply-To: noreply@" . Config::get('domain_name') . "\n";
           if(mail($confirm_email, $confirm_subject, $confirm_body, $headers ) && mail($notice_email, $notice_subject, $notice_body, $headers )) {
             $log_line = implode('µ', array($time_short, $_SERVER['REMOTE_ADDR'], $_POST["sender_name"], $_POST["sender_email"], $_POST["sender_phone"], $_POST["sender_memo"]) );
             file_put_contents("contacts/sent.log", $log_line.PHP_EOL , FILE_APPEND | LOCK_EX);

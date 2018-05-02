@@ -5,11 +5,20 @@
  * This work is not licensed for use or distribution.
 -->
 <?php
-include('cgi-bin/configure.php');
+class Config {
+  private static $config = null;
+  public static function init() {
+    self::$config = require "cgi-bin/configure.php";
+  }
+  public static function get($key) {
+    return self::$config[$key];
+  }
+} Config::init();
+
 $page_name= filter_input(INPUT_SERVER, 'QUERY_STRING', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_BACKTICK);
 $page_data = array();
 $page_links = array();
-$pages_info = file("$pages_path/_pages.dat", FILE_IGNORE_NEW_LINES);
+$pages_info = file(Config::get('pages_path') . "/_pages.dat", FILE_IGNORE_NEW_LINES);
 $page_names = array_map(function($data){$info = explode('µ',$data); return $info[0];},$pages_info);
 if ('' == $page_name || ! in_array($page_name, $page_names) ) {
   $page_name = 'home';
@@ -24,11 +33,11 @@ foreach ($pages_info as $page_info) {
     $page_keywords = $page_data[3];
     $page_links[$page_data[0]] = "      <li>$page_title</li>\n";
     if ('home' == $page_name ){
-      $meta_title = $company_name_title;
-      $page_crumb = $company_name_html;
+      $meta_title = Config::get('company_name_title');
+      $page_crumb = Config::get('company_name_html');
     } else {
-      $meta_title = "$page_title | $company_name_title";
-      $page_crumb = "$company_name_html :: $page_title";
+      $meta_title = "$page_title | " . Config::get('company_name_title');
+      $page_crumb = Config::get('company_name_html') . " :: $page_title";
     }
   } else {
     $page_links[$page_data[0]] = "      <li><a href='/$page_data[0]' title='$page_data[1]'>$page_data[1]</a></li>\n";
@@ -43,7 +52,7 @@ foreach ($pages_info as $page_info) {
     include('cgi-bin/page_header.php');
 ?>
 <div id="content_wrapper"><?php
-  $page_source = "$pages_path/$page_name";
+  $page_source = Config::get('pages_path') . "/$page_name";
   if ( file_exists("$page_source.php") ) {
     include("$page_source.php");
   } elseif ( file_exists("$page_source.html") ) {
@@ -62,6 +71,6 @@ foreach ($pages_info as $page_info) {
 ?></div>
 <?php include('cgi-bin/page_footer.php'); ?>
 </div>
-<div id="copyright">Site content Copyright &copy;<?php echo date('Y');?> by Brown Bros. Heat &amp; Air.</div></div>
+<?php echo '<div id="copyright">Site content Copyright &copy;' . date('Y') . ' by ' . Config::get('company_name_html') . '.</div></div>'; ?>
 </body>
 </html>
