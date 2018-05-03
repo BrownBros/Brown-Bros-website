@@ -15,51 +15,42 @@ class Config {
   }
 } Config::init();
 
+require "cgi-bin/functions.php";
+
 $page_name= filter_input(INPUT_SERVER, 'QUERY_STRING', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_BACKTICK);
-$page_data = array();
-$page_links = array();
-$pages_info = file(Config::get('pages_path') . "/_pages.dat", FILE_IGNORE_NEW_LINES);
-$page_names = array_map(function($data){$info = explode('µ',$data); return $info[0];},$pages_info);
-if ('' == $page_name || ! in_array($page_name, $page_names) ) {
+$page_data_collection = build_page_meta();
+
+if ('' == $page_name || ! in_array($page_name, $page_data_collection['names']) ) {
   $page_name = 'home';
 }
-include('cgi-bin/contact_handler.php');
-foreach ($pages_info as $page_info) {
-  $page_data = explode('µ', $page_info);
-  $page_names[$page_data[0]] = $page_data[1];
-  if ($page_name == $page_data[0]) {
-    $page_title = $page_data[1];
-    $page_desc = $page_data[2];
-    $page_keywords = $page_data[3];
-    $page_links[$page_data[0]] = "      <li>$page_title</li>\n";
-    if ('home' == $page_name ){
-      $meta_title = Config::get('company_name_title');
-      $page_crumb = Config::get('company_name_html');
-    } else {
-      $meta_title = "$page_title | " . Config::get('company_name_title');
-      $page_crumb = Config::get('company_name_html') . " :: $page_title";
-    }
-  } else {
-    $page_links[$page_data[0]] = "      <li><a href='/$page_data[0]' title='$page_data[1]'>$page_data[1]</a></li>\n";
-  }
-}
+
+require 'cgi-bin/contact_handler.php';
+
+$page_id = $page_data_collection['by_name'][$page_name];
+list($top_nav_html, $foot_nav_html) = build_nav_links($page_id, $page_data_collection);
+$head_html = build_html_head($page_id, $page_data_collection);
+$header_html = build_body_head($page_id, $page_data_collection);
+
+
+echo $head_html;
+
+
 ?>
-<?php include('cgi-bin/html_head.php'); ?>
 <body>
 <div id="page_box"><div id="page_wrapper">
 <?php
-    include('cgi-bin/page_nav.php');
-    include('cgi-bin/page_header.php');
+    echo $top_nav_html;
+    echo $header_html;
 ?>
 <div id="content_wrapper"><?php
   $page_source = Config::get('pages_path') . "/$page_name";
   if ( file_exists("$page_source.php") ) {
-    include("$page_source.php");
+    require "$page_source.php";
   } elseif ( file_exists("$page_source.html") ) {
     readfile("$page_source.html");
   } elseif ( file_exists("$page_source") && is_dir("$page_source") ){
     if ( file_exists("$page_source/index.php") ) {
-      include("$page_source/index.php");
+      require "$page_source/index.php";
     } elseif ( file_exists("$page_source/index.html") ) {
       readfile("$page_source/index.html");
     } else {
@@ -69,7 +60,7 @@ foreach ($pages_info as $page_info) {
     echo "<div><b>Cannot find a directory or file to use for the '$page_name ' page.</b></div>\n";
   }
 ?></div>
-<?php include('cgi-bin/page_footer.php'); ?>
+<?php require 'cgi-bin/page_footer.php'; ?>
 </div>
 <?php echo '<div id="copyright">Site content Copyright &copy;' . date('Y') . ' by ' . Config::get('company_name_html') . '.</div></div>'; ?>
 </body>
