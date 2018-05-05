@@ -1,4 +1,11 @@
-
+<?php
+/**
+ * Copyright: ©2018 Ronald Lamoreaux, DBA Chindraba
+ * License: This work is not licensed for use or distribution other
+ *          other than for the website it is built for.
+ * Project: www.BrownBros.net
+ **/
+?>
 <form name="contact_brownbros" id="contact_brownbros" autocomplete="on" method="post" enctype="multipart/form-data" action="/contact">
   <div>Please enter your information.</div>
   <div class="contact_error"><?php echo $error_message;?></div>

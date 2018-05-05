@@ -1,9 +1,9 @@
-/*
- * Style Sheet for site-wide use on the BrownBros.net website.
- * Copyright ©2018 Ronald Lamoreaux, as Chindraba
- *
- * This work is not licensed for use or distribution.
- */
+/**
+ * Copyright: ©2018 Ronald Lamoreaux, DBA Chindraba
+ * License: This work is not licensed for use or distribution other
+ *          other than for the website it is built for.
+ * Project: www.BrownBros.net
+ **/
 
 /*  The styles for the page header. Common to all pages  */
 header {
@@ -36,9 +36,8 @@ address {
   font-style: italic;
   padding: 0.4em 0;
 }
-#company_name {
+#company_desc {
   font-size: 1.4em;
   font-weight: 700;
 }
 
-https://fonts.googleapis.com/css?family=Roboto_Mono'

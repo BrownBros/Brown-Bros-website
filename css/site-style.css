@@ -1,9 +1,9 @@
-/*
- * Style Sheet for site-wide use on the BrownBros.net website.
- * Copyright ©2018 Ronald Lamoreaux, as Chindraba
- *
- * This work is not licensed for use or distribution.
- */
+/**
+ * Copyright: ©2018 Ronald Lamoreaux, DBA Chindraba
+ * License: This work is not licensed for use or distribution other
+ *          other than for the website it is built for.
+ * Project: www.BrownBros.net
+ **/
 
 /*  Load the font-specific CSS files  */
 @import "/css/font-css/assistant.css";

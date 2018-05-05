@@ -1,9 +1,9 @@
-/*
- * Style Sheet for CSS based navigation controls
- * Copyright ©2018 Ronald Lamoreaux, as Chindraba
- *
- * This work is not licensed for use or distribution.
- */
+/**
+ * Copyright: ©2018 Ronald Lamoreaux, DBA Chindraba
+ * License: This work is not licensed for use or distribution other
+ *          other than for the website it is built for.
+ * Project: www.BrownBros.net
+ **/
 
 nav {
   position: fixed;
@@ -99,7 +99,7 @@ nav a {
 #top_nav_menuToggle input:checked ~ ul {
   transform: none;
 }
-#8yl`top_nav_menu li {
+#top_nav_menu li {
   padding: 0.35em 0;
   font-size: 1.2em;
   color: Coral;
@@ -123,6 +123,9 @@ nav a {
   overflow: hidden;
   height: 1.2em;
   width: 85%;
+}
+.crumb a {
+  color: ForestGreen;
 }
 .top_nav_child {
   font-size: 85%;
